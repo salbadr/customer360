@@ -7,7 +7,16 @@
         {% if not interactions %}
             <p>There are no interactions in the last 30 days.</p>
         {% else %}
-            <table>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Channel</th>
+                        <th>Direction</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+
                    {% for interaction in interactions %}
                    <tr>
                         <td>{{ interaction.channel }}</td>
@@ -15,6 +24,8 @@
                         <td>{{ interaction.count }}</td>
                    </tr>
                    {% endfor %}
+                </tbody>
+
             </table>
             <h4> Total: {{ count }}</h4>
         {% endif %}

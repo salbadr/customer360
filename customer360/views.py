@@ -15,9 +15,10 @@ def create_customer(request):
         name = request.POST['name']
         email = request.POST['email']
         phone = request.POST['phone']
+        social_media = request.POST['social_media']
         address = request.POST['address']
         customer = Customer.objects.create(
-            name=name, email=email, phone=phone, address=address)
+            name=name, email=email, phone=phone,social_media=social_media, address=address)
         customer.save()
         msg = "Successfully saved a customer"
         return render(request, 'add.html', context={"msg": msg})

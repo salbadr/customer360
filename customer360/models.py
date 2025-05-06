@@ -5,6 +5,7 @@ class Customer(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=20)
+    social_media = models.CharField(max_length=100, blank=True)
     address = models.CharField(max_length=200)
 
     def __str__(self):
@@ -15,7 +16,8 @@ class Interaction(models.Model):
         ('phone', 'Phone'),
         ('sms', 'SMS'),
         ('email', 'Email'),
-        ('letter', 'Letter')
+        ('letter', 'Letter'),
+        ('social_media', 'Social Media'),
     ]
 
     DIRECTION_CHOICES = [
