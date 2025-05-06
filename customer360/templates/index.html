@@ -5,6 +5,18 @@
     <head>
         <title>Home Page</title>
     </head>
+    <script>
+        function set_customer(){
+            const cinput = document.querySelector('input[name="selected_customer"]:checked');
+            if(cinput){
+                const cid = cinput.value;
+                window.location = `/interact/${cid}`;
+            }
+            else{
+                alert("Please select a customer");
+            }
+        }
+    </script>
     <body>
         <h1>Welcome to Customer360</h1>
         <p>Interact and Manage your Customers</p>
